@@ -197,7 +197,7 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
       isHtml: emailData.isHtml
     });
 
-    const response = await axios.post('https://Mail.pbr.com.ng/send', emailData, {
+    const response = await axios.post('http://Mail.pbr.com.ng/send', emailData, {
       headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
