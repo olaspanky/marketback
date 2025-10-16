@@ -180,24 +180,51 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
     </html>
   `;
 
+   try {
+    const emailData = {
+      to: recipientEmail,
+      from: process.env.EMAIL_FROM || 'noreply@pbrinsight.com',
+      subject: '✅ Registration Confirmed - Pharm East and West African Training',
+      body: htmlBody,
+      isHtml: true
+    };
+
+    // Try HTTP instead of HTTPS
+    const response = await axios.post('http://Mail.pbr.com.ng/send', emailData, {
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      timeout: 15000
+    });
+
+    console.log('✅ Email sent successfully via HTTP:', response.data);
+    return { success: true, data: response.data };
+  } catch (error) {
+    console.error('❌ Error sending email via HTTP:', error.response?.data || error.message);
+    
+    // Fallback to HTTPS with SSL bypass
+    console.log('🔄 Trying HTTPS with SSL bypass...');
+    return sendConfirmationEmailWithSSLBypass(recipientEmail, participantName, htmlBody);
+  }
+}
+
+// Fallback function with SSL bypass
+async function sendConfirmationEmailWithSSLBypass(recipientEmail, participantName, htmlBody) {
+  const httpsAgent = new https.Agent({
+    rejectUnauthorized: false
+  });
+
   try {
     const emailData = {
       to: recipientEmail,
       from: process.env.EMAIL_FROM || 'noreply@pbrinsight.com',
       subject: '✅ Registration Confirmed - Pharm East and West African Training',
-      body: htmlBody,  // Using 'body' instead of 'html'
-      isHtml: true     // Using 'isHtml' (capital H)
+      body: htmlBody,
+      isHtml: true
     };
 
-    console.log('📧 Sending email with data:', {
-      to: emailData.to,
-      from: emailData.from,
-      subject: emailData.subject,
-      body_length: emailData.body.length,
-      isHtml: emailData.isHtml
-    });
-
-    const response = await axios.post('http://Mail.pbr.com.ng/send', emailData, {
+    const response = await axios.post('https://Mail.pbr.com.ng/send', emailData, {
       headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -206,31 +233,14 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
       timeout: 15000
     });
 
-    console.log('✅ Email sent successfully:', response.data);
+    console.log('✅ Email sent successfully with SSL bypass:', response.data);
     return { success: true, data: response.data };
   } catch (error) {
-    console.error('❌ Error sending email:');
-    
-    if (error.response) {
-      console.error('Response status:', error.response.status);
-      console.error('Response data:', error.response.data);
-      console.error('Response headers:', error.response.headers);
-      
-      // Log the request that was sent
-      console.error('Request sent:', {
-        url: error.config?.url,
-        method: error.config?.method,
-        data: error.config?.data
-      });
-    } else if (error.request) {
-      console.error('No response received:', error.request);
-    } else {
-      console.error('Error message:', error.message);
-    }
-    
+    console.error('❌ Error sending email with SSL bypass:', error.response?.data || error.message);
     throw error;
   }
 }
+
 
 // Middleware
 app.use(cors({
