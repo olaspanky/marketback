@@ -74,7 +74,7 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
                               <span style="font-size: 24px; margin-right: 10px;">💻</span>
                             </td>
                             <td style="padding: 10px 0;">
-                              <strong style="color: #000000ff; font-size: 15px; display: block; margin-bottom: 8px;">Join via Zoom</strong>
+                              <strong style="color: #000000ff; font-size: 15px; display: block; margin-bottom: 8px;">register via zoom for notifications and reminders</strong>
                               <a href="https://bit.ly/pbrWEAwksp" style="display: inline-block; background-color: #3b82f6; color: #ffffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background-color 0.3s;">
                                 🔗 Click to Join Training
                               </a>
