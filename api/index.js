@@ -30,7 +30,7 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
     <body style="margin: 0; padding: 0; background-color: #f4f7fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
       <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f4f7fa;">
         <tr>
-          <td style="padding: 3px;">
+          <td style="">
             <!-- Main Container -->
             <table role="presentation" style=" margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
               
@@ -67,14 +67,7 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
                             </td>
                           </tr>
                           
-                          <tr>
-                            <td style="padding: 10px 0; vertical-align: top;">
-                              <span style="font-size: 24px; margin-right: 10px;">🕒</span>
-                            </td>
-                            <td style="padding: 10px 0;">
-                              <strong style="color: #1f2937; font-size: 15px; display: block; margin-bottom: 3px;">Time</strong>
-                            </td>
-                          </tr>
+                         
                           
                           <tr>
                             <td style="padding: 10px 0; vertical-align: top;">
