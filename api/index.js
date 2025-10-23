@@ -32,23 +32,14 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
         <tr>
           <td style="padding: 3px;">
             <!-- Main Container -->
-            <table role="presentation" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
+            <table role="presentation" style=" margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
               
               <!-- Header -->
-              <tr>
-                <td style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 40px 30px; text-align: center;">
-                  <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
-                    🎉 Registration Confirmed!
-                  </h1>
-                  <p style="margin: 10px 0 0 0; color: #e0e7ff; font-size: 16px;">
-                    You're all set for the training
-                  </p>
-                </td>
-              </tr>
+             
               
               <!-- Body Content -->
               <tr>
-                <td style="padding: 40px 30px;">
+                <td style="padding: 9px 4px;">
                   <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #1f2937;">
                     Dear <strong style="color: #1e3a8a;">${participantName}</strong>,
                   </p>
