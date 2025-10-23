@@ -30,7 +30,7 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
     <body style="margin: 0; padding: 0; background-color: #f4f7fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
       <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f4f7fa;">
         <tr>
-          <td style="">
+          <td style=";">
             <!-- Main Container -->
             <table role="presentation" style=" margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
               
@@ -52,7 +52,7 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
                   <table role="presentation" style="width: 100%; border-collapse: collapse; margin: 30px 0;">
                     <tr>
                       <td style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 10px; padding: 25px; border-left: 4px solid #3b82f6;">
-                        <h2 style="margin: 0 0 20px 0; color: black; font-size: 18px; font-weight: 700;">
+                        <h2 style="margin: 0 0 20px 0; color: #000000ff; font-size: 18px; font-weight: 700;">
                           📋 Training Details
                         </h2>
                         
@@ -62,18 +62,20 @@ async function sendConfirmationEmail(recipientEmail, participantName) {
                               <span style="font-size: 24px; margin-right: 10px;">📅</span>
                             </td>
                             <td style="padding: 10px 0;">
-                              <strong style="color: black; font-size: 15px; display: block; margin-bottom: 3px;">Training Dates</strong>
-                              <span style="color: black; font-size: 15px;">November 14th - 16th, 2025</span>
+                              <strong style="color: #000000ff; font-size: 15px; display: block; margin-bottom: 3px;">Training Dates</strong>
+                              <span style="color: #000000ff; font-size: 15px;">November 14th - 16th, 2025</span>
                             </td>
                           </tr>
                           
                          
                           
                           <tr>
-                           
+                            <td style="padding: 10px 0; vertical-align: top;">
+                              <span style="font-size: 24px; margin-right: 10px;">💻</span>
+                            </td>
                             <td style="padding: 10px 0;">
-                              <strong style="color: #1f2937; font-size: 15px; display: block; margin-bottom: 8px;">Join via Zoom</strong>
-                              <a href="https://bit.ly/pbrWEAwksp" style="display: inline-block; background-color: #3b82f6; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background-color 0.3s;">
+                              <strong style="color: #000000ff; font-size: 15px; display: block; margin-bottom: 8px;">Join via Zoom</strong>
+                              <a href="https://bit.ly/pbrWEAwksp" style="display: inline-block; background-color: #3b82f6; color: #ffffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background-color 0.3s;">
                                 🔗 Click to Join Training
                               </a>
                             </td>
